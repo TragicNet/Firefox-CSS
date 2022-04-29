@@ -1,0 +1,137 @@
+@import url('chrome/remove_pinned_space.css');
+@import url('chrome/hide_toolbox_top_bottom_borders.css');
+@import url('chrome/overlay_menubar.css');
+
+/* @import url('chrome/window_control_placeholder_support.css'); */
+
+/* @import url('chrome/hide_tabs_toolbar_w_alltabs_button.css'); */
+
+/* @import url('chrome/autohide_tabstoolbar.css'); */
+
+/* @import url('chrome/autohide_main_toolbar.css'); */
+
+/* @import url('chrome/hide_tabs_with_one_tab.css'); */
+
+/* @import url('chrome/autohide_sidebar.css'); */
+
+@import url('chrome/compact_proton.css');
+@import url('chrome/floating_findbar_on_top.css');
+@import url('chrome/hide_tabs_scrollbuttons.css');
+@import url('chrome/minimal_in-UI_scrollbars.css');
+@import url('chrome/round_caption_buttons.css');
+@import url('chrome/grid_overflow_menu.css');
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+* {
+    font-family: cursive !important;
+}
+
+#webrtcIndicator {
+	display: none;
+}
+
+#TabsToolbar {
+    padding-inline-start: initial !important;
+}
+.tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[first-visible-tab] .tab-background,
+.tabbrowser-tabs[movingtab] .tabbrowser-tab[first-visible-tab][style*="translateX(0px)"] .tab-background {
+    border-inline-start: initial !important;
+}
+
+
+.tabbrowser-tab {
+    padding-inline: 0px !important; /* By default, proton tabs have 2px + 2px = 4px space between them */
+}
+
+#TabsToolbar .titlebar-spacer { display:none!important; }
+
+/* *******************************************************************
+	Toolbar Elements
+*/
+
+/* Custom back and forward buttons */
+#back-button {
+	list-style-image: url("left-arrow.svg") !important;
+}
+
+#forward-button {
+	list-style-image: url("right-arrow.svg") !important;
+}
+
+/* *******************************************************************
+	Urlbar
+*/
+
+/* Url bar suggestions list container */
+.urlbarView {
+	border-radius: 0 0 8px 8px !important;
+	box-shadow: none !important;
+}
+
+/* *******************************************************************
+	Browser tabs
+*/
+
+/* Hide some bloat */
+.tab-close-button,
+.tab-line,
+.tabbrowser-tab::before,
+.tabbrowser-tab::after {
+	display: none !important;
+}
+
+.titlebar-spacer[type="pre-tabs"] {
+	display: none;
+}
+
+#nav-bar {
+	background-color: #161A21;
+}
+
+/*** Proton Tabs Tweaks ***/
+
+/* Adjust tab corner shape, optionally remove space below tabs */
+
+#tabbrowser-tabs {
+    --user-tab-rounding: 0px;
+    margin-inline-end: 0px !important;
+}
+
+.tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+    margin-block: 1px 0 !important;
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
+/* Container color bar visibility */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
+}
+
+/* Override Normal Density height to Compact Density height only for tabs */
+
+#tabbrowser-tabs {
+    --tab-min-height: 29px !important;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+/* #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
+    max-height: 30px !important;
+} */
+    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
+#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon, 
+#TabsToolbar-customization-target .toolbarbutton-text, 
+#TabsToolbar-customization-target .toolbarbutton-badge-stack,
+#scrollbutton-up,#scrollbutton-down {
+    padding-top: 7px !important;
+    padding-bottom: 6px !important;
+}
+
+/* Tweak Options as of 7/10/2021; Generated Tue Aug 10 2021 00:09:36 GMT+0530 (India Standard Time) */
