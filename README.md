@@ -33,3 +33,7 @@ Either of the following two methods work:
     @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
     That's it! Now that you've set everything up, all you need to do is add code to the files and restart the browser.
+    
+
+
+Link to Firefox theme: https://addons.mozilla.org/en-US/firefox/addon/nordnet/
