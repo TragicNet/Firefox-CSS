@@ -8,15 +8,11 @@ See the above repository for updates as well as full license text. */
 
 #widget-overflow-fixed-list{
   display: grid;
-  grid-template-areas: "s s s s s s" "a a a a a a";
+  grid-template-areas: "s s s" "a a a";
   grid-auto-columns: auto;
 }
 
-#widget-overflow-list {
-	padding-inline: 2px 10px;
-}
-
-/* #widget-overflow-mainView[visible] #widget-overflow-fixed-list { max-width: 110px } */
+#widget-overflow-mainView[visible] #widget-overflow-fixed-list { max-width: 110px }
 #widget-overflow-mainView ~ panelview[visible]{ max-width: unset !important; } 
 
 #widget-overflow-fixed-list > *{ padding-block: 8px !important; }

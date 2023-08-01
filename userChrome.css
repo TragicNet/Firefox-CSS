@@ -14,12 +14,17 @@
 
 /* @import url('chrome/autohide_sidebar.css'); */
 
+/* @import url('chrome/toggle_tabs_toolbar_with_alt.css'); */
+@import url('chrome/theme_color_variables.css');
+@import url('chrome/theme_sidebar.css');
 @import url('chrome/compact_proton.css');
 @import url('chrome/floating_findbar_on_top.css');
 @import url('chrome/hide_tabs_scrollbuttons.css');
 @import url('chrome/minimal_in-UI_scrollbars.css');
 @import url('chrome/round_caption_buttons.css');
-@import url('chrome/grid_overflow_menu.css');
+@import url('chrome/compact_extensions_panel.css');
+/* @import url('chrome/grid_overflow_menu.css'); */
+/* @import url('chrome/full_width_urlbar_popup.css'); */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 * {
@@ -132,6 +137,29 @@
 #scrollbutton-up,#scrollbutton-down {
     padding-top: 7px !important;
     padding-bottom: 6px !important;
+}
+
+/* Context Menu */
+
+menupopup{
+    --panel-background: #161a21 !important;
+    --panel-color: #8496A0 !important;
+}
+menupopup > menuitem[_moz-menuactive="true"]:not([disabled]),
+menupopup > menu[_moz-menuactive="true"]:not([disabled]),
+#context-navigation > menuitem[_moz-menuactive="true"]:not([disabled]) > .menu-iconic-left > .menu-iconic-icon{
+    background: #1c2028 !important;
+    color: #8496A0 !important;
+}
+menupopup > menuitem[_moz-menuactive="true"],
+menupopup > menu[_moz-menuactive="true"],
+#context-navigation > menuitem[_moz-menuactive="true"] > .menu-iconic-left > .menu-iconic-icon{
+    background: #161a21 !important;
+}
+
+.sidebar-splitter {
+  /* display: none !important; */
+  border: none !important;
 }
 
 /* Tweak Options as of 7/10/2021; Generated Tue Aug 10 2021 00:09:36 GMT+0530 (India Standard Time) */

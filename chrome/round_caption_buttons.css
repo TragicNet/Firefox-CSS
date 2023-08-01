@@ -46,3 +46,7 @@ See the above repository for updates as well as full license text. */
 
 /* Space for dragging */
 #TabsToolbar > .titlebar-buttonbox-container{ margin-top: 0px !important; }
+
+html#main-window body box#navigator-toolbox-background toolbox#navigator-toolbox vbox#titlebar toolbar#toolbar-menubar.browser-toolbar.chromeclass-menubar.titlebar-color.customization-target hbox.titlebar-buttonbox-container {
+	height: 31.4px;
+}
